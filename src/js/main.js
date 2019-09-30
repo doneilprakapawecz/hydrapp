@@ -19,31 +19,39 @@ if ('serviceWorker' in navigator) {
 
 console.log(`Hello world!`);
 
+const key = new Date().toISOString().slice(0, 10) ;
+console.log(key);
 
+const dzisiaj=document.querySelector('.header--js');
+dzisiaj.innerHTML=key;
 
 const button_1=document.querySelector('.button-1--js');
 button_1.addEventListener("click",(e)=>{
  
- if(localStorage.getItem('numer'))
+ if(localStorage.getItem(key))
   {
-    number.innerHTML=localStorage.getItem('numer')*1+1;
-    localStorage.setItem('numer',number.innerHTML);
+    number.innerHTML=localStorage.getItem(key)*1+1;
+    localStorage.setItem(key,number.innerHTML);
   }
   else
   {
-    localStorage.setItem('numer','1');
-    number.innerHTML=number.innerHTML*1+1;
+    localStorage.setItem(key,'1');
+    number.innerHTML=1;
   }
 });
 const button_2=document.querySelector('.button-2--js');
 button_2.addEventListener("click",(e)=>{
-  if(number.innerHTML*1>0)
+  if(localStorage.getItem(key)&&localStorage.getItem(key)*1>0)
   {
-    number.innerHTML=localStorage.getItem('numer')*1-1;
-    localStorage.setItem('numer',number.innerHTML);
+    number.innerHTML=localStorage.getItem(key)*1-1;
+    localStorage.setItem(key,number.innerHTML);
+  }
+  else
+  {
+    number.innerHTML=0;
   }
 });
 const number=document.querySelector('.number--js');
-if(localStorage.getItem('numer'))number.innerHTML=localStorage.getItem('numer');
+if(localStorage.getItem(key))number.innerHTML=localStorage.getItem(key);
 
 
