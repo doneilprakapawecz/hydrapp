@@ -54,4 +54,6 @@ button_2.addEventListener("click",(e)=>{
 const number=document.querySelector('.number--js');
 if(localStorage.getItem(key))number.innerHTML=localStorage.getItem(key);
 
+//-----------------------------------------statystyka---------------------------------------------
 
+//------------------------------------------------------------------------------------------------
