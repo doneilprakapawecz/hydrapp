@@ -40,16 +40,32 @@
      <h1 class="header">hydrapp</h1>
      
      <div class="container">
-        <span class="number number--js">0</span>
+        <span class="number number-s--js">0</span>
      </div>
-     <button class="button-1 button-1--js">dodaj szklankę</button>
-     <button class="button-2 button-2--js">usuń szklankę</button>
+     <input type="text"class="button-1 button-1s--js" placeholder="wpisz datę">
+     <button class="button-2 button-2s--js">sprawdź</button>
      <h3 class="header--js">data</h3>
-     <a href="statystyka.html"class="link">statystyka</a>
+     <a href="index.html"class="link">strona główna</a>
    </main>
-   
+   <script>
+            const number_s=document.querySelector('.number-s--js');
+            const button_1s=document.querySelector('.button-1s--js');
+            const button_2s=document.querySelector('.button-2s--js');
+            button_2s.addEventListener("click",(e)=>{ 
+                if(localStorage.getItem(button_1s.value))
+                {
+                    number_s.innerHTML=localStorage.getItem(button_1s.value);
+                    document.querySelector('.header--js').innerHTML=button_1s.value;
+                }
+                else
+                {
+                    number_s.innerHTML='X';
+                    document.querySelector('.header--js').innerHTML='nie znaleziono';
+                }
+            });
+   </script>
    
 
-    <script src="js/main.js"></script>
+    <!--<script src="js/main.js"></script>-->
   </body>
 </html>

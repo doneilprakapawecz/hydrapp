@@ -380,4 +380,8 @@ body {
 .header {
   margin-bottom: 50px; }
 
+.link {
+  text-decoration: none;
+  color: #6868f1; }
+
 /*# sourceMappingURL=main.css.map */
